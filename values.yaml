@@ -8,10 +8,10 @@ pod:
   containerProtocol: TCP
   namespace: ingress
   tolerations:
-  -  key: "nodepool03"
-     operator: "Equal"
-     value: "true"
-     effect: "NoExecute"
+    key: "nodepool03"
+    operator: "Equal"
+    value: "true"
+    effect: "NoExecute"
 
 
 service:
