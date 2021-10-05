@@ -1,0 +1,19 @@
+---
+pod:
+  containerPort: 80
+  imageName: "mcr.microsoft.com/dotnet/core/samples"
+  imageTag: "aspnetapp"
+  name: aspnetapp
+  containerName: aspnetapp-image
+  containerProtocol: TCP
+
+
+service:
+  name: aspnetapp
+  targetPort: 80
+  port: 80
+
+ingress:
+  name: aspnetapp
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
