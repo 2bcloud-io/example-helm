@@ -6,12 +6,9 @@ metadata:
   labels:
     app: {{ .Values.pod.name }}
 spec:
-  {{- range .Values.pod.tolerations }}
+  {{- if .Values.master.tolerations }}
   tolerations:
-  -  key: {{ .key }}
-     operator: {{ .operator }}
-     value: {{ .value }}
-     effect: {{ .effect }}
+  {{ toYaml .Values.master.tolerations | indent 8 }}
   {{- end }}
   containers:
   - image: "{{ .Values.pod.imageName }}:{{ .Values.pod.imageTag }}"
