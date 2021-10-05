@@ -4,6 +4,7 @@ metadata:
   name: {{ .Values.service.name }}
   namespace: {{ .Values.service.namespace }}
 spec:
+  type: LoadBalancer
   selector:
     app: {{ .Values.service.name }}
   ports:
