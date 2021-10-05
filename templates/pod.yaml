@@ -6,9 +6,9 @@ metadata:
   labels:
     app: {{ .Values.pod.name }}
 spec:
-  {{- if .Values.master.tolerations }}
+  {{- if .Values.pod.tolerations }}
   tolerations:
-  {{ toYaml .Values.master.tolerations | indent 8 }}
+  {{ toYaml .Values.pod.tolerations | indent 8 }}
   {{- end }}
   containers:
   - image: "{{ .Values.pod.imageName }}:{{ .Values.pod.imageTag }}"
