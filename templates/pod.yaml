@@ -7,10 +7,10 @@ metadata:
     app: {{ .Values.pod.name }}
 spec:
   tolerations:
-  - key: {{ .Values.pod.tolerations.key }}
-    operator: {{ .Values.pod.tolerations.operator }}
-    value: { .Values.pod.tolerations.value }}
-    effect: { .Values.pod.tolerations.effect }}
+  - key: "nodepool03"
+    operator: "Equal"
+    value: "true"
+    effect: "NoExecute"
   containers:
   - image: "{{ .Values.pod.imageName }}:{{ .Values.pod.imageTag }}"
     name: {{ .Values.pod.containerName }}
